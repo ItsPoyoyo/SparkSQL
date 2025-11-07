@@ -11,7 +11,7 @@ spark = SparkSession.builder \
     .getOrCreate()
 
 # Leitura do CSV
-df = spark.read.option("header", True).option("inferSchema", True).csv("stock_details_5_years.csv")
+df = spark.read.option("header", True).option("inferSchema", True).csv("../stock_details_5_years.csv")
 
 # Criação de coluna 'year_month' a partir da data
 df = df.withColumn("year_month", F.date_format(F.to_date("Date", "yyyy-MM-dd"), "yyyy-MM"))
