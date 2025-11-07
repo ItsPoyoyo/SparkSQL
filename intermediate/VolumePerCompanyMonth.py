@@ -54,4 +54,4 @@ result.show(50, truncate=False)
 # Save final result
 result.write.mode("overwrite").json(outputDirectory)
 
-print("✅ Output saved to:", outputDirectory)
+print("Result saved to:", outputDirectory)
