@@ -11,7 +11,7 @@ spark = SparkSession.builder \
     .getOrCreate()
 
 # Lê o arquivo CSV com cabeçalho
-df = spark.read.option("header", True).option("inferSchema", True).csv("stock_details_5_years.csv")
+df = spark.read.option("header", True).option("inferSchema", True).csv("../stock_details_5_years.csv")
 
 # Extrai o ano da coluna Date
 df = df.withColumn("year", F.year(F.to_date("Date", "yyyy-MM-dd")))
